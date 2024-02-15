@@ -82,6 +82,27 @@
             <div id="resultado"></div>
         </div>
     </div>
+    
+    
+    <div class="container">
+        <div class="content">
+            <h2>División de dos números</h2>
+
+            <form>
+                <div class="input-container">
+                    <label for="num1">Dividendo:</label>
+                    <input type="text" id="num1">
+                </div>
+                <div class="input-container">
+                    <label for="num2">Divisor:</label>
+                    <input type="text" id="num2">
+                </div>
+                <input type="button" value="Calcular división" onclick="calcularDivision()">
+            </form>
+
+            <div id="resultadoDivision"></div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="content">
@@ -144,6 +165,7 @@
     </script>
 
     <script>
+
         function calcularMultiplicacion() {
             // Obtener los valores de los campos de entrada            
             var num1 = parseFloat(document.getElementById("num1").value);
@@ -163,6 +185,17 @@
     </script>
 
 
+        function calcularDivision() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            if (!isNaN(num1) && !isNaN(num2) && num2 !== 0) {
+                var division = num1 / num2;
+                document.getElementById("resultadoDivision").innerHTML = "El resultado de la división es: " + division;
+            } else {
+                document.getElementById("resultadoDivision").innerHTML = "Por favor, ingrese dos números válidos y asegúrese de que el divisor no sea cero.";
+            }
+        }
+    </script>
 
 
 </body>
